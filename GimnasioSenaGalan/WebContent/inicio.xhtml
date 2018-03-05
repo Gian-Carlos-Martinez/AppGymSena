@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<ui:composition lang="es" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/templates/plantilla.xhtml">
+	<head>
+	
+	<link rel="shortcut icon" href="resources/img1/favicon-16x16.png" type="image/x-icon" />
+	
+<!--Import Google Icon Font-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet" />
+<!--Import materialize.css-->
+
+<link type="text/css" rel="stylesheet"
+	href="resources/css/materialize.css" media="screen,projection" />
+<link type="text/css" rel="stylesheet"
+	href="resources/css/estilosInicio.css" />
+	<link rel="stylesheet" href="resources/css/font-awesome.css" />
+
+<!--Let browser know website is optimized for mobile-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	</head>
+	<ui:param name="tituloPagina" value="Gimnasio Sena" />
+
+	<body>
+
+		<!-- Salto de Linea, para separarlo de la Barra de Navegación -->
+		<br></br>
+
+		<!-- Creacion de la Barra de Navegacion -->
+		<ui:param name="nombreInicio" value="Inicio" />
+		<ui:param name="nombreIngresoGimnasio" value="Ingreso al Gimnasio" />
+		<ui:param name="nombreRegistrarRutina" value="Agregar Rutina" />
+		<ui:param name="nombreRegistrarEjercicio" value="Agregar Ejercicio" />
+		<ui:param name="nombreRegistrarUsuario" value="Registrar Usuarios" />
+		<ui:param name="nombreAcercaDe" value="Acerca De" />
+		<ui:param name="nombreCerrarSesion" value="Cerrar Sesión" />
+
+		<ui:define name="contenido">
+			<!-- Imagenes en rotación -->
+			<br></br>
+			<div class="row">
+				<div class="col l1"></div>
+				<div class="col l10 s12 m12">
+					<div class="slider">
+						<ul class="slides">
+							<li><img src="resources/img1/imagen1.jpg" /></li>
+							<li><img src="resources/img1/imagen2.jpg" /></li>
+							<li><img src="resources/img1/imagen3.jpg" /></li>
+							<li><img src="resources/img1/imagen4.jpg" /></li>
+							<li><img src="resources/img1/imagen5.jpg" /></li>
+							<li><img src="resources/img1/imagen6.jpg" /></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col l1"></div>
+			</div>
+
+			<!-- Salto de imagen principal a las imagenes pequeñas -->
+			<br></br>
+
+			<!-- Creación de las targetas (Historia Sena, Dirigido A, Lugar)  -->
+
+			<!-- Targeta de La Historia del Sena -->
+			<div class="row">
+				<div class="col l4 s6 m6">
+					<div class="card targetaLogoSena">
+						<div class="card-image">
+							<img src="resources/img1/logoSena.png" class="imagenesPequenas"
+								style="width: 95%; height: 300px; padding: 30px;" />
+							<h4 class="CaracteristicasImagenesPequenas">Historia Sena</h4>
+						</div>
+						<div class="card-content">
+							<p>El 21 de junio de 1957 nació el Servicio Nacional de
+								Aprendizaje (SENA) bajo el Decreto Ley 118 de ese año; fue una
+								iniciativa del economista cartagenero Rodolfo Martínez Tono
+								(q.e.p.d.), quien le propuso la idea de crear una entidad de
+								enseñanza laboral y técnica al entonces ministro del trabajo,
+								Raimundo Emiliani Román. Entre los acontecimientos más
+								destacados de estos 59 años de historia se tiene la creación en
+								el mismo año de fundación de la Entidad de la primeras
+								seccionales (hoy regionales)........</p>
+						</div>
+						<div class="card-action">
+							<!-- Modal Trigger -->
+							<a class="modal-trigger" href="#modal1">Ver Mas</a>
+
+							<!-- Modal Structure -->
+							<div id="modal1" class="modal">
+								<div class="modal-content">
+									<h4 class="textoCentradoEnModales">Historia del Sena</h4>
+									<img src="resources/img1/sena.png" />
+									<p>
+										Un año después (2005), Fondo Emprender comenzó a otorgar
+										recursos de capital semilla condonables para iniciativas de
+										negocio. En 2008, el SENA ingresó a la organización
+										WorldSkills, a través de la cual se busca mejorar los
+										estándares de la calidad de la formación técnica y tecnológica
+										en más de 80 países del mundo; y en 2013 llegaron los primeros
+										‘volunteachers’, que son voluntarios provenientes de países
+										angloparlantes para fortalecer la formación en inglés de los
+										aprendices. El 20 de agosto de 2014 se posesionó como Director
+										General del SENA, Alfonso Prada, teniendo como reto hacer de
+										la Entidad una de las herramientas para una paz estable y
+										duradera. En 2015 nació SENA Emprende Rural (SER), estrategia
+										derivada del Programa Jóvenes Rurales Emprendedores y
+										fortalecida por la Dirección de Empleo, Trabajo y
+										Emprendimiento. Hace solo un par de semanas el ministro
+										consejero para el posconflicto, Rafael Pardo, y el director
+										general del SENA, Alfonso Prada, dieron a conocer que la
+										Entidad “desembarcará” en un centenar de municipios marginados
+										por la guerra. <br></br> <a href="http://www.sena.edu.co">Fuente
+											online</a>
+									</p>
+								</div>
+								<div class="modal-footer">
+									<a href="#!"
+										class="modal-action modal-close waves-effect waves-green btn-flat">Volver
+										al Inicio</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<!-- Targeta de Dirigido A -->
+				<div class="col l4 s6 m6">
+					<div class="card targetaLogoSena">
+						<div class="card-image">
+							<img src="resources/img1/dirigidoA.png" class="imagenesPequenas"
+								style="width: 95%; height: 300px; padding: 30px;" />
+							<h4 class="CaracteristicasImagenesPequenas">Dirigido A</h4>
+						</div>
+						<div class="card-content">
+							<p>El 21 de junio de 1957 nació el Servicio Nacional de
+								Aprendizaje (SENA) bajo el Decreto Ley 118 de ese año; fue una
+								iniciativa del economista cartagenero Rodolfo Martínez Tono
+								(q.e.p.d.), quien le propuso la idea de crear una entidad de
+								enseñanza laboral y técnica al entonces ministro del trabajo,
+								Raimundo Emiliani Román. Entre los acontecimientos más
+								destacados de estos 59 años de historia se tiene la creación en
+								el mismo año de fundación de la Entidad de la primeras
+								seccionales (hoy regionales)........</p>
+						</div>
+						<div class="card-action">
+							<!-- Modal Trigger -->
+							<a class="modal-trigger" href="#modal2">Ver Mas</a>
+
+							<!-- Modal Structure -->
+							<div id="modal2" class="modal">
+								<div class="modal-content">
+									<h4 class="textoCentradoEnModales">Dirigido A</h4>
+									<img src="resources/img1/dirigidoA.png" />
+									<p>
+										El 21 de junio de 1957 nació el Servicio Nacional de
+										Aprendizaje (SENA) bajo el Decreto Ley 118 de ese año; fue una
+										iniciativa del economista cartagenero Rodolfo Martínez Tono
+										(q.e.p.d.), quien le propuso la idea de crear una entidad de
+										enseñanza laboral y técnica al entonces ministro del trabajo,
+										Raimundo Emiliani Román. Entre los acontecimientos más
+										destacados de estos 59 años de historia se tiene la creación
+										en el mismo año de fundación de la Entidad de la primeras
+										seccionales (hoy regionales) de los departamentos de
+										Antioquia, Atlántico, Bolívar, Cauca, Cundinamarca, Magdalena,
+										Nariño y Valle. En 1960, en solo tres años de fundación, la
+										Institución ya contaba con 30 centros de formación en todo el
+										territorio nacional, que llegaron a 50 en 1968. Al cumplir 15
+										años (1971), el SENA alcanzó un prestigio internacional sin
+										precedentes, ya que distintos países llegaron a Colombia para
+										conocer la experiencia de sus procesos de formación y apoyo al
+										emprendimiento. Se destacó la visita de Charles de Gaulle,
+										presidente de Francia. Entre 1976 y 1980 se fortalecieron los
+										procesos de formación para la industria manufacturera, la
+										agricultura industrial, el comercio y los servicios, acorde
+										con el crecimiento sostenido en estos sectores de la economía.
+										En 1985 surgió Capacitación para la Participación Campesina
+										(Capaca), dirigida a líderes campesinos e indígenas y
+										comunidades beneficiarias de la Reforma Agraria para que tomen
+										parte en el desarrollo rural. Cinco años más tarde (1990) fue
+										creada la Agencia Pública de Empleo –hasta hoy el principal
+										servicio de intermediación laboral en Colombia–, a través de
+										la cual 1,1 millones de personas han conseguido trabajo en
+										todo el país, 56 por ciento de ellas en los últimos dos años.
+										A partir de 1992 estudiantes de colegio comenzaron a formarse
+										simultáneamente como técnicos del SENA a través del Programa
+										de Articulación con la Media, mientras que en 1996 la Entidad
+										y el Instituto para el Desarrollo de la Ciencia y la
+										Tecnología (Colciencias) se unieron para promover la
+										investigación tecnología y la modernización científica. En el
+										año 2000 rodaron por las carreteras colombianas las primeras
+										aulas móviles llevando formación a zonas alejadas de los
+										cascos urbanos. Acorde a las exigencias, en 2002 se estableció
+										la página web www.sena.edu.co, que en la actualidad es la
+										segunda página del Estado más visitada, y con la que un año
+										posterior se implementó el aprendizaje virtual a través de
+										internet. En 2004 llegó la Institución, como regionales
+										autónomas, a los departamentos de Amazonas, Arauca,
+										Cundinamarca, Guainía, Guaviare, Putumayo, Vaupés y Vichada.
+										Un año después (2005), Fondo Emprender comenzó a otorgar
+										recursos de capital semilla condonables para iniciativas de
+										negocio. En 2008, el SENA ingresó a la organización
+										WorldSkills, a través de la cual se busca mejorar los
+										estándares de la calidad de la formación técnica y tecnológica
+										en más de 80 países del mundo; y en 2013 llegaron los primeros
+										‘volunteachers’, que son voluntarios provenientes de países
+										angloparlantes para fortalecer la formación en inglés de los
+										aprendices. El 20 de agosto de 2014 se posesionó como Director
+										General del SENA, Alfonso Prada, teniendo como reto hacer de
+										la Entidad una de las herramientas para una paz estable y
+										duradera. En 2015 nació SENA Emprende Rural (SER), estrategia
+										derivada del Programa Jóvenes Rurales Emprendedores y
+										fortalecida por la Dirección de Empleo, Trabajo y
+										Emprendimiento. Hace solo un par de semanas el ministro
+										consejero para el posconflicto, Rafael Pardo, y el director
+										general del SENA, Alfonso Prada, dieron a conocer que la
+										Entidad “desembarcará” en un centenar de municipios marginados
+										por la guerra. <br></br> <a href="http://www.sena.edu.co">Fuente
+											online</a>
+									</p>
+								</div>
+								<div class="modal-footer">
+									<a href="#!"
+										class="modal-action modal-close waves-effect waves-green btn-flat">Volver
+										al Inicio</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Targeta de LugarSena -->
+				<div class="col s3 m3"></div>
+				<div class="col l4 s6 m6">
+					<div class="card targetaLogoSena">
+						<div class="card-image">
+							<img src="resources/img1/lugarSena.jpg" class="imagenesPequenas"
+								style="width: 95%; height: 300px; padding: 30px;" />
+							<h4 class="CaracteristicasImagenesPequenas">Lugar Sena</h4>
+						</div>
+						<div class="card-content">
+							<p>El 21 de junio de 1957 nació el Servicio Nacional de
+								Aprendizaje (SENA) bajo el Decreto Ley 118 de ese año; fue una
+								iniciativa del economista cartagenero Rodolfo Martínez Tono
+								(q.e.p.d.), quien le propuso la idea de crear una entidad de
+								enseñanza laboral y técnica al entonces ministro del trabajo,
+								Raimundo Emiliani Román. Entre los acontecimientos más
+								destacados de estos 59 años de historia se tiene la creación en
+								el mismo año de fundación de la Entidad de la primeras
+								seccionales (hoy regionales)........</p>
+						</div>
+						<div class="card-action">
+							<!-- Modal Trigger -->
+							<a class="modal-trigger" href="#modal3">Ver Mas</a>
+
+							<!-- Modal Structure -->
+							<div id="modal3" class="modal">
+								<div class="modal-content">
+									<h4 class="textoCentradoEnModales">Lugar Sena</h4>
+									<img src="resources/img1/lugarSena.jpg" />
+									<p>
+										El 21 de junio de 1957 nació el Servicio Nacional de
+										Aprendizaje (SENA) bajo el Decreto Ley 118 de ese año; fue una
+										iniciativa del economista cartagenero Rodolfo Martínez Tono
+										(q.e.p.d.), quien le propuso la idea de crear una entidad de
+										enseñanza laboral y técnica al entonces ministro del trabajo,
+										Raimundo Emiliani Román. Entre los acontecimientos más
+										destacados de estos 59 años de historia se tiene la creación
+										en el mismo año de fundación de la Entidad de la primeras
+										seccionales (hoy regionales) de los departamentos de
+										Antioquia, Atlántico, Bolívar, Cauca, Cundinamarca, Magdalena,
+										Nariño y Valle. En 1960, en solo tres años de fundación, la
+										Institución ya contaba con 30 centros de formación en todo el
+										territorio nacional, que llegaron a 50 en 1968. Al cumplir 15
+										años (1971), el SENA alcanzó un prestigio internacional sin
+										precedentes, ya que distintos países llegaron a Colombia para
+										conocer la experiencia de sus procesos de formación y apoyo al
+										emprendimiento. Se destacó la visita de Charles de Gaulle,
+										presidente de Francia. Entre 1976 y 1980 se fortalecieron los
+										procesos de formación para la industria manufacturera, la
+										agricultura industrial, el comercio y los servicios, acorde
+										con el crecimiento sostenido en estos sectores de la economía.
+										En 1985 surgió Capacitación para la Participación Campesina
+										(Capaca), dirigida a líderes campesinos e indígenas y
+										comunidades beneficiarias de la Reforma Agraria para que tomen
+										parte en el desarrollo rural. Cinco años más tarde (1990) fue
+										creada la Agencia Pública de Empleo –hasta hoy el principal
+										servicio de intermediación laboral en Colombia–, a través de
+										la cual 1,1 millones de personas han conseguido trabajo en
+										todo el país, 56 por ciento de ellas en los últimos dos años.
+										A partir de 1992 estudiantes de colegio comenzaron a formarse
+										simultáneamente como técnicos del SENA a través del Programa
+										de Articulación con la Media, mientras que en 1996 la Entidad
+										y el Instituto para el Desarrollo de la Ciencia y la
+										Tecnología (Colciencias) se unieron para promover la
+										investigación tecnología y la modernización científica. En el
+										año 2000 rodaron por las carreteras colombianas las primeras
+										aulas móviles llevando formación a zonas alejadas de los
+										cascos urbanos. Acorde a las exigencias, en 2002 se estableció
+										la página web www.sena.edu.co, que en la actualidad es la
+										segunda página del Estado más visitada, y con la que un año
+										posterior se implementó el aprendizaje virtual a través de
+										internet. En 2004 llegó la Institución, como regionales
+										autónomas, a los departamentos de Amazonas, Arauca,
+										Cundinamarca, Guainía, Guaviare, Putumayo, Vaupés y Vichada.
+										Un año después (2005), Fondo Emprender comenzó a otorgar
+										recursos de capital semilla condonables para iniciativas de
+										negocio. En 2008, el SENA ingresó a la organización
+										WorldSkills, a través de la cual se busca mejorar los
+										estándares de la calidad de la formación técnica y tecnológica
+										en más de 80 países del mundo; y en 2013 llegaron los primeros
+										‘volunteachers’, que son voluntarios provenientes de países
+										angloparlantes para fortalecer la formación en inglés de los
+										aprendices. El 20 de agosto de 2014 se posesionó como Director
+										General del SENA, Alfonso Prada, teniendo como reto hacer de
+										la Entidad una de las herramientas para una paz estable y
+										duradera. En 2015 nació SENA Emprende Rural (SER), estrategia
+										derivada del Programa Jóvenes Rurales Emprendedores y
+										fortalecida por la Dirección de Empleo, Trabajo y
+										Emprendimiento. Hace solo un par de semanas el ministro
+										consejero para el posconflicto, Rafael Pardo, y el director
+										general del SENA, Alfonso Prada, dieron a conocer que la
+										Entidad “desembarcará” en un centenar de municipios marginados
+										por la guerra. <br></br> <a href="http://www.sena.edu.co">Fuente
+											online</a>
+									</p>
+								</div>
+								<div class="modal-footer">
+									<a href="#!"
+										class="modal-action modal-close waves-effect waves-green btn-flat">Volver
+										al Inicio</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col s3 m3"></div>
+			</div>
+
+			<!-- Creación del Píe de Pagina -->
+
+			<!--Import jQuery before materialize.js-->
+			<script type="text/javascript" src="resources/js/jquery.js"></script>
+			<script type="text/javascript" src="resources/js/materialize.min.js"></script>
+
+			<!-- jQuery Inicialización para las imagenes principales del Sena -->
+			<script>
+      			$(document).ready(function(){
+          			$('.slider').slider();
+        		});
+      		</script>
+
+			<!-- JQuery Inicialización para las ventanas Modales -->
+			<script>
+      			$(document).ready(function(){
+    	    	// the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+    	   	 		$('.modal').modal();
+    	  		});
+      		</script>
+		</ui:define>
+	</body>
+</ui:composition>
