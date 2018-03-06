@@ -4,14 +4,17 @@ import java.util.ArrayList;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ViewScoped;
 
 import dao.EjercicioDao;
 
 import vo.EjercicioVo;
+import vo.UsuarioVo;
 
 
 @ManagedBean
 @SessionScoped
+@ViewScoped
 public class EjercicioBean {
 	
 	
@@ -38,9 +41,40 @@ public EjercicioBean() {
 	
 }
 
+public void eliminarEjercicio(EjercicioVo EjercicioVo) {
+	setMsjBD(miejerciciodao.eliminarEjercicio(EjercicioVo));
+	
+	listaEjercicio2.remove(EjercicioVo);
+	listaEjercicioPecho.remove(EjercicioVo);
+	listaEjercicioEspalda.remove(EjercicioVo);
+	listaEjercicioHombros.remove(EjercicioVo);
+	listaEjercicioCadera.remove(EjercicioVo);
+	listaEjercicioBiceps.remove(EjercicioVo);
+	listaEjercicioTriceps.remove(EjercicioVo);
+	listaEjercicioMuslo.remove(EjercicioVo);
+	listaEjercicioPierna.remove(EjercicioVo);
+	listaEjercicioTrapesio.remove(EjercicioVo);
+	
+	
+}
+
+public void editarEjercicio(EjercicioVo EjercicioVo) {
+
+	System.out.println("ingresa");
+	EjercicioVo.setEditar(true);;
+	
+}
+public void guardarEjercicio(EjercicioVo EjercicioVo) {
+	setMsjBD(miejerciciodao.editarEjercicio(EjercicioVo));
+	EjercicioVo.setEditar(false);
+	// for (Persona persona : listaPersona){
+	// persona.setEditar(false);
+	// }}
+	
+}
+
 
 public void agregarEjercicio() {
-	listaEjercicio.add(miejercicio);
 	setMsjBD(miejerciciodao.agregarEjercicio(miejercicio));
 	miejercicio = new EjercicioVo();// limpiamos el objeto
 	

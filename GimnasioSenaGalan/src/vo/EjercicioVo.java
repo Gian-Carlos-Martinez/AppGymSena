@@ -10,14 +10,14 @@ public class EjercicioVo {
 	private String descripcion;
 	private String imagen;
 	private String idEjercicio;
-	
+	private boolean editar;
 	
 	public EjercicioVo() {
 		
 	}
 	
 	public EjercicioVo(String idEjercicio,String tipoEjercicio,String nombre,String nivel,String series,String repeticiones,String descripcion,
-			String imagen){
+			String imagen,boolean editar){
 				super();
 				
 				this.nombre=nombre;
@@ -28,8 +28,19 @@ public class EjercicioVo {
 				this.descripcion=descripcion;
 				this.idEjercicio=idEjercicio;
 				this.imagen=imagen;
+				this.editar=editar;
 				
 			}
+	
+	
+
+	public boolean isEditar() {
+		return editar;
+	}
+
+	public void setEditar(boolean editar) {
+		this.editar = editar;
+	}
 
 	public String getTipoEjercicio() {
 		return tipoEjercicio;

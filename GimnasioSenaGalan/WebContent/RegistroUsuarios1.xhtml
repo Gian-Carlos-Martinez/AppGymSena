@@ -57,11 +57,12 @@
 							<li class="tab col s3 "><a class="active fa fa-user-plus"
 								href="#registrarUsuario" id="test1"> Registrar Usuario</a></li>
 							<li class="tab col s3"><a class="active fa fa-users"
-								href="#listaUsuarios"> Ver Usuarios</a></li>
+								href="#listaUsuarios" onclick="#{tablaBean.cargarPersonas2()}"> Ver Usuarios</a></li>
 							<li class="tab col s3"><a class="active fa fa-address-card"
 								href="#registroIMC"> Medidas del Usuario (IMC)</a></li>
 							<li class="tab col s3"><a class="active fa fa-times-circle"
-								href="#usuariosInactivos"> Usuarios Inactivos</a></li>
+								href="#usuariosInactivos"
+								onclick="#{tablaBean.cargarPersonas3()}"> Usuarios Inactivos</a></li>
 						</ul>
 
 						<!-- Se vinculara la información que conllevara en el Tab de Registro de Usuarios -->
@@ -238,8 +239,8 @@
 													<div class="card-action" id="contenido">
 														<!-- Modal Trigger -->
 														<h:form value="#{tablaBean.listaPersona2}" var="datos" />
-														<a class="modal-trigger" href="#modal1">Ver más
-															Información</a>
+														<a class="modal-trigger" href="#modal1"
+														onclick="#{tablaBean.editarPersona(datos)}">Editar Datos</a>
 														<!-- Modal Structure -->
 														<div id="modal1" class="modal" data-backdrop="static">
 															<div class="modal-content">
@@ -534,7 +535,7 @@
 														<f:facet name="header">
 															<h:outputLabel value="Acciones" />
 														</f:facet>
-														<h:commandButton value=" Activar"
+														<h:commandButton action="#{tablaBean.ActivarPersona(datos)}" value="Activar"
 															class="fas fa-times-circle" />
 														<br />
 													</h:column>

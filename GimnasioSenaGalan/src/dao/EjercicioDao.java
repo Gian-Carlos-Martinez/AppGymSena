@@ -11,6 +11,7 @@ import vo.EjercicioVo;
 
 
 
+
 public class EjercicioDao {
 
 	public String agregarEjercicio(EjercicioVo miejercicio) {
@@ -19,8 +20,21 @@ public class EjercicioDao {
 		Connection connection = null;
 		Conexion conexion = new Conexion();
 		PreparedStatement preparedStatement = null;
+		PreparedStatement statement = null;
+		ResultSet result = null;
+		connection = conexion.getConnection();
+		String consulta1 = "select *from ejercicio where id='"+miejercicio.getIdEjercicio()+"'";
 		
-
+		try {
+			if (connection !=null) {
+				statement = connection.prepareStatement(consulta1);
+				result = statement.executeQuery();
+			
+				if (result.next()) {
+				 resultado="Ya hay un Ejercicio Registrado Con este ID";
+				 System.out.println("Ya hay un Ejercicio Registrado Con este ID");
+				}else {
+				
 					connection = conexion.getConnection();
 					String consulta = "insert into ejercicio (`id`,`tipoejercicio`, `Nombre`, `series`, `repeticiones`, `nivel`, `descripcion`, `imagen`) "
 							+ "values(?,?,?,?,?,?,?,?)";
@@ -47,9 +61,80 @@ public class EjercicioDao {
 					conexion.desconectar();
 				
 
+		           
+
+				}
+				conexion.desconectar();
+				
+			}else {
+				resultado="No se pudo conectar al mysql";
+			}
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+
+		 return resultado;			
+	}
+	public String editarEjercicio(EjercicioVo EjercicioVo) {
+		String resultado = "";
+
+		Connection connection = null;
+		Conexion conexion = new Conexion();
+		connection = conexion.getConnection();
+
+		try {
+			String consulta = "update ejercicio set nombre=?, descripcion=?, nivel=?, repeticiones=?, series=?,"
+					+ "tipoEjercicio=? where id="+EjercicioVo.getIdEjercicio();
+
+			PreparedStatement preparedStatement = connection.prepareStatement(consulta);
+
+			preparedStatement = connection.prepareStatement(consulta);
+			preparedStatement.setString(1, EjercicioVo.getNombre());
+			preparedStatement.setString(2, EjercicioVo.getDescripcion());
+			preparedStatement.setString(3, EjercicioVo.getNivel());
+			preparedStatement.setString(4, EjercicioVo.getRepeticiones());
+			preparedStatement.setString(5, EjercicioVo.getSeries());
+			preparedStatement.setString(6, EjercicioVo.getTipoEjercicio());
+					
+			preparedStatement.executeUpdate();
+
+			resultado = "se ha actualizado el ejercicio satisfactoriamente";
+
+			conexion.desconectar();
+
+		} catch (SQLException e) {
+			System.out.println(e);
+			resultado = "no se pudo actualizar el ejercicio";
+		}
 		return resultado;
+	}
+	
+	public String eliminarEjercicio(EjercicioVo miejercicio) {
+		Connection connection = null;
+		Conexion conexion = new Conexion();
+		connection = conexion.getConnection();
+
+		String resp = "";
+		String sentencia = "delete from ejercicio where id='"+miejercicio.getIdEjercicio()+"'";
+		try {
+			
+
+			PreparedStatement statement = connection.prepareStatement(sentencia);
+			statement.executeUpdate();
+            System.out.println("Se ha Eliminado exitosamente");
+			resp = "Se ha inactivado exitosamente";
+			statement.close();
+			conexion.desconectar();
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+			resp = "no se pudo Eliminar";
+		}
+		return resp;
 
 	}
+	
 	
 	public ArrayList<EjercicioVo> obtenerListaEjerciciosPecho() {
 		Connection connection = null;

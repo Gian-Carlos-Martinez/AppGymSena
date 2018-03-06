@@ -49,6 +49,7 @@ public class TablaBean {
 		personaDao = new PersonaDao();
 		medidas=new MedidasUsuarioVo();
 		cargarPersonas2();
+		cargarPersonas3();
 	}
 
 	public void consultarPersona() {

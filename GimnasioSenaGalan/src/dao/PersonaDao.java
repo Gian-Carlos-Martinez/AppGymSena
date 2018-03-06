@@ -35,11 +35,12 @@ public class PersonaDao {
 				if (result.next()) {
 
 					resultado = "Ya esta registrado";
+					System.out.println("Ya esta registrado");
 				} else {
 
 					connection = conexion.getConnection();
 					String consulta = "insert into registrados (`documento`, `Nombre`, `Apellido`, `Ficha`, `sexo`, `telefono`, `correo`, `formacion`,`idRutina`) "
-							+ "values(?,?,?,?,?,?,?,?,?,?)";
+							+ "values(?,?,?,?,?,?,?,?,?)";
 
 					try {
 						preparedStatement = connection.prepareStatement(consulta);
@@ -437,7 +438,7 @@ public class PersonaDao {
 
 			PreparedStatement statement = connection.prepareStatement(sentencia);
 			statement.executeUpdate();
-            System.out.println("Se ha incativado exitosamente");
+            System.out.println("Se ha ativado exitosamente");
 			resp = "Se ha inactivado exitosamente";
 			statement.close();
 			conexion.desconectar();
