@@ -9,7 +9,7 @@ import javax.faces.bean.ViewScoped;
 import dao.EjercicioDao;
 
 import vo.EjercicioVo;
-import vo.UsuarioVo;
+
 
 
 @ManagedBean
